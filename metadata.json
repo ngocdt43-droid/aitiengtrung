@@ -1,0 +1,6 @@
+{
+  "name": "AI học tiếng trung cùng em",
+  "description": "Trợ lý học tập thông minh giúp học sinh đọc viết tiếng Trung dễ dàng hơn với chữ to, đọc nổi bật từng từ, giải thích từ khó THCS, phông chữ chống nhầm lẫn chữ, chế độ ban đêm và tương phản cao.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

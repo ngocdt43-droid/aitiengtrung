@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+/* Chinese character rendering classes */
+.chinese-char {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+/* Accessible fonts for dyslexia and easy reading */
+.font-dyslexic-wide {
+  font-family: 'Lexend', 'Noto Sans SC', sans-serif !important;
+  letter-spacing: 0.06em;
+  word-spacing: 0.15em;
+  line-height: 1.8 !important;
+}
+
+.font-spacious-sans {
+  font-family: 'Comic Neue', 'Noto Sans SC', sans-serif !important;
+  letter-spacing: 0.08em;
+  word-spacing: 0.18em;
+  line-height: 1.9 !important;
+}
+
+.font-standard {
+  font-family: 'Be Vietnam Pro', 'Noto Sans SC', system-ui, sans-serif;
+  letter-spacing: normal;
+}
+
+/* Ruby text styling for Pinyin above Hanzi */
+ruby {
+  ruby-position: over;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  vertical-align: bottom;
+  margin: 0 2px;
+  line-height: 1.2;
+}
+
+rt {
+  font-size: 0.55em;
+  line-height: 1.1;
+  font-weight: 600;
+  text-align: center;
+  color: #c2410c; /* Orange-700 for high visibility */
+  user-select: text;
+  display: block;
+}
+
+/* High-contrast mode ruby */
+.theme-high-contrast rt {
+  color: #facc15 !important; /* Vivid yellow */
+}
+
+/* Night dark mode ruby */
+.theme-night rt {
+  color: #38bdf8 !important; /* Sky-400 vivid */
+}
+
+/* Warm sepia theme ruby */
+.theme-warm rt {
+  color: #9a3412 !important;
+}
+
+/* Accessible animations */
+@keyframes reading-pulse {
+  0%, 100% {
+    background-color: rgba(254, 240, 138, 0.6);
+    box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.4);
+  }
+  50% {
+    background-color: rgba(254, 240, 138, 0.95);
+    box-shadow: 0 0 0 6px rgba(234, 179, 8, 0.7);
+  }
+}
+
+.reading-highlight {
+  animation: reading-pulse 2s infinite ease-in-out;
+  border-radius: 8px;
+}
+
+/* High contrast highlight */
+.theme-high-contrast .reading-highlight {
+  background-color: #facc15 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 0 4px #ffffff !important;
+}
+
+/* Night mode highlight */
+.theme-night .reading-highlight {
+  background-color: #0369a1 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 4px #38bdf8 !important;
+}
+
+/* Word-by-word active highlight for dyslexic learners */
+.word-active-highlight {
+  background-color: #fde047 !important;
+  color: #000000 !important;
+  border-radius: 6px;
+  padding: 2px 4px;
+  box-shadow: 0 0 0 3px #eab308, 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08);
+  display: inline-block;
+  font-weight: 900 !important;
+  transition: all 0.15s ease;
+}
+
+.theme-high-contrast .word-active-highlight {
+  background-color: #facc15 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 0 3px #ffffff !important;
+}
+
+.theme-night .word-active-highlight {
+  background-color: #38bdf8 !important;
+  color: #082f49 !important;
+  box-shadow: 0 0 0 3px #7dd3fc !important;
+}
