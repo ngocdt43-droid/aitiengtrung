@@ -1,0 +1,932 @@
+import { AnalysisResult } from '../types';
+
+// Curated Educational Vocabulary Database for Students
+export const VOCABULARY_DATABASE: Record<string, AnalysisResult> = {
+  // 1. TỪ: ĐI (去 / 走)
+  đi: {
+    title: 'Sơ đồ tư duy từ: Đi (去 / 走) • Di chuyển & Xuất hành',
+    originalInput: 'đi',
+    inputType: 'text',
+    recognizedText: '今天天气很好。我和朋友一起去学校。我们慢慢走，路上看到很多人。放学以后，我们一起回家。',
+    vietnameseTranslation: 'Hôm nay thời tiết rất đẹp. Tôi và bạn cùng nhau đi đến trường. Chúng tôi thong thả bước đi, trên đường nhìn thấy rất nhiều người. Sau khi tan học, chúng tôi cùng nhau về nhà.',
+    fullPinyin: 'Jīntiān tiānqì hěn hǎo. Wǒ hé péngyǒu yīqǐ qù xuéxiào. Wǒmen mànmàn zǒu, lùshang kàndào hěn duō rén. Fàngxué yǐhòu, wǒmen yīqǐ huí jiā.',
+    centralTopic: {
+      word: '去',
+      pinyin: 'qù',
+      meaning: 'Đi, đi đến (rời vị trí hiện tại đến nơi khác)',
+      category: 'Động từ di chuyển cơ bản',
+    },
+    summary: {
+      chinese: '本课围绕核心动词‘去’和‘走’，学习日常生活中的移动与出行。掌握‘我去学校’和‘我们走吧’等极简句型。',
+      pinyin: "Běn kè wéirào héxīn dòngcí 'qù' hé 'zǒu', xuéxí rìcháng shēnghuó zhōng de yídòng yǔ chūxíng. Zhǎngwò 'Wǒ qù xuéxiào' hé 'Wǒmen zǒu ba' děng jíjiǎn jùxíng.",
+      vietnamese: "Bài học xoay quanh các động từ 'đi' (去) và 'bước đi' (走), học về các hoạt động di chuyển thường ngày. Nắm chắc mẫu câu cực ngắn: 'Tôi đi đến trường' và 'Chúng ta đi thôi'.",
+      keyPoints: [
+        "Phân biệt '去' (đi đến đâu đó) và '走' (bước đi, đi bộ).",
+        "Mẫu câu nền tảng: Chủ ngữ + 去 + Nơi chốn (ví dụ: 我去学校 - Tôi đi đến trường).",
+        "Cách rủ bạn bè cùng đi: Chúng ta đi thôi -> 我们走吧 (Wǒmen zǒu ba).",
+        "Tập gõ Pinyin: qu -> 去, zou -> 走.",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-di-1',
+        word: '去',
+        pinyin: 'qù',
+        meaning: 'Đi, đi đến (địa điểm cụ thể)',
+        typingGuide: "Gõ pinyin: 'qu' trên bàn phím -> chọn số 1 chữ 去",
+        radicalOrStrokes: 'Bên trên là bộ Thổ (土 - đất đai), bên dưới là bộ Tư (厶), tượng hình bước chân rời đi khỏi vùng đất.',
+        exampleSentence: '我去学校。',
+        examplePinyin: 'Wǒ qù xuéxiào.',
+        exampleMeaning: 'Tôi đi đến trường học.',
+        relatedWords: [
+          { word: '去哪儿', pinyin: 'qù nǎr', meaning: 'Đi đâu thế' },
+          { word: '去过', pinyin: 'qù guo', meaning: 'Từng đi' },
+          { word: '出去', pinyin: 'chū qù', meaning: 'Đi ra ngoài' },
+        ],
+      },
+      {
+        id: 'mm-di-2',
+        word: '走',
+        pinyin: 'zǒu',
+        meaning: 'Bước đi, đi bộ, rời đi',
+        typingGuide: "Gõ pinyin: 'zou' trên bàn phím -> chọn chữ 走",
+        radicalOrStrokes: 'Tượng hình một người đang vung tay sải từng bước chân tiến về phía trước.',
+        exampleSentence: '我们走吧。',
+        examplePinyin: 'Wǒmen zǒu ba.',
+        exampleMeaning: 'Chúng ta cùng đi thôi!',
+        relatedWords: [
+          { word: '走路', pinyin: 'zǒulù', meaning: 'Đi bộ' },
+          { word: '走开', pinyin: 'zǒukāi', meaning: 'Tránh ra, rời đi' },
+          { word: '快走', pinyin: 'kuài zǒu', meaning: 'Đi nhanh lên' },
+        ],
+      },
+      {
+        id: 'mm-di-3',
+        word: '来',
+        pinyin: 'lái',
+        meaning: 'Đến, lại đây',
+        typingGuide: "Gõ pinyin: 'lai' trên bàn phím -> chọn chữ 来",
+        radicalOrStrokes: 'Tượng hình nhánh lúa trĩu hạt được mang tới, mang ý nghĩa đón chào.',
+        exampleSentence: '你来我家玩吧。',
+        examplePinyin: 'Nǐ lái wǒ jiā wán ba.',
+        exampleMeaning: 'Bạn đến nhà tôi chơi nhé.',
+        relatedWords: [
+          { word: '进来', pinyin: 'jìn lái', meaning: 'Đi vào trong' },
+          { word: '回来', pinyin: 'huí lái', meaning: 'Trở về đây' },
+          { word: '来自', pinyin: 'lái zì', meaning: 'Đến từ' },
+        ],
+      },
+      {
+        id: 'mm-di-4',
+        word: '回',
+        pinyin: 'huí',
+        meaning: 'Về, quay về',
+        typingGuide: "Gõ pinyin: 'hui' trên bàn phím -> chọn chữ 回",
+        radicalOrStrokes: 'Khung viền bộ Vi (囗) bao quanh chữ Khẩu (口), như vòng xoáy quay về tổ ấm.',
+        exampleSentence: '我想回家。',
+        examplePinyin: 'Wǒ xiǎng huí jiā.',
+        exampleMeaning: 'Tôi muốn về nhà.',
+        relatedWords: [
+          { word: '回家', pinyin: 'huí jiā', meaning: 'Về nhà' },
+          { word: '回去', pinyin: 'huí qù', meaning: 'Quay về lại' },
+          { word: '回答', pinyin: 'huídá', meaning: 'Trả lời' },
+        ],
+      },
+      {
+        id: 'mm-di-5',
+        word: '跑',
+        pinyin: 'pǎo',
+        meaning: 'Chạy, chạy bộ',
+        typingGuide: "Gõ pinyin: 'pao' trên bàn phím -> chọn chữ 跑",
+        radicalOrStrokes: 'Có bộ Túc (足: bàn chân) bên trái biểu thị hành động chân sải bước thật nhanh.',
+        exampleSentence: '他在操场跑步。',
+        examplePinyin: 'Tā zài cāochǎng pǎobù.',
+        exampleMeaning: 'Cậu ấy đang chạy bộ trên sân trường.',
+        relatedWords: [
+          { word: '跑步', pinyin: 'pǎobù', meaning: 'Chạy bộ' },
+          { word: '快跑', pinyin: 'kuài pǎo', meaning: 'Chạy nhanh' },
+          { word: '赛跑', pinyin: 'sàipǎo', meaning: 'Thi chạy' },
+        ],
+      },
+      {
+        id: 'mm-di-6',
+        word: '坐',
+        pinyin: 'zuò',
+        meaning: 'Ngồi / Đi các phương tiện giao thông',
+        typingGuide: "Gõ pinyin: 'zuo' trên bàn phím -> chọn chữ 坐",
+        radicalOrStrokes: 'Hai chữ Nhân (人) ngồi đối diện nhau trên mặt đất (土) nghỉ ngơi.',
+        exampleSentence: '我坐公共汽车。',
+        examplePinyin: 'Wǒ zuò gōnggòng qìchē.',
+        exampleMeaning: 'Tôi đi học bằng xe buýt.',
+        relatedWords: [
+          { word: '坐下', pinyin: 'zuò xià', meaning: 'Ngồi xuống' },
+          { word: '坐车', pinyin: 'zuò chē', meaning: 'Đi xe' },
+          { word: '请坐', pinyin: 'qǐng zuò', meaning: 'Mời ngồi' },
+        ],
+      },
+    ],
+    sentences: [
+      {
+        id: 's-di-1',
+        chinese: '今天天气很好。',
+        pinyin: 'Jīntiān tiānqì hěn hǎo.',
+        vietnamese: 'Hôm nay thời tiết rất đẹp.',
+      },
+      {
+        id: 's-di-2',
+        chinese: '我和朋友一起去学校。',
+        pinyin: 'Wǒ hé péngyǒu yīqǐ qù xuéxiào.',
+        vietnamese: 'Tôi và bạn cùng nhau đi đến trường.',
+      },
+      {
+        id: 's-di-3',
+        chinese: '我们慢慢走，路上看到很多人。',
+        pinyin: 'Wǒmen mànmàn zǒu, lùshang kàndào hěn duō rén.',
+        vietnamese: 'Chúng tôi thong thả bước đi, trên đường nhìn thấy rất nhiều người.',
+      },
+      {
+        id: 's-di-4',
+        chinese: '放学以后，我们一起回家。',
+        pinyin: 'Fàngxué yǐhòu, wǒmen yīqǐ huí jiā.',
+        vietnamese: 'Sau khi tan học, chúng tôi cùng nhau về nhà.',
+      },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 2. TỪ: ĂN (吃)
+  ăn: {
+    title: 'Sơ đồ tư duy từ: Ăn (吃) • Ẩm thực & Bữa ăn',
+    originalInput: 'ăn',
+    inputType: 'text',
+    recognizedText: '我喜欢吃米饭。苹果很好吃。我们一起去吃饭吧。今天你想吃什么？',
+    vietnameseTranslation: 'Tôi thích ăn cơm. Táo rất là ngon. Chúng ta cùng đi ăn cơm nhé. Hôm nay bạn muốn ăn gì?',
+    fullPinyin: 'Wǒ xǐhuān chī mǐfàn. Píngguǒ hěn hǎochī. Wǒmen yīqǐ qù chīfàn ba. Jīntiān nǐ xiǎng chī shénme?',
+    centralTopic: {
+      word: '吃',
+      pinyin: 'chī',
+      meaning: 'Ăn, thưởng thức món ăn',
+      category: 'Động từ sinh hoạt cơ bản',
+    },
+    summary: {
+      chinese: "围绕核心动词'吃'，我们学习了米饭、好吃、喝等常用关联词。每个词都配有适合初学者的超短句，便于记忆。",
+      pinyin: "Wéirào héxīn dòngcí 'chī', wǒmen xuéxíle mǐfàn, hǎochī, hē děng chángyòng guānlián cí. Měi gè cí dōu pèi yǒu shìhé chūxuézhě de chāo duǎnjù, biànyú jìyì.",
+      vietnamese: "Xoay quanh động từ nòng cốt 'Ăn' (吃), chúng ta học các từ liên quan như cơm, ngon, uống. Mỗi từ đều có câu cực ngắn dành riêng cho người mới học.",
+      keyPoints: [
+        "Động từ gốc: 吃 (chī) - gõ 'chi' trên bàn phím",
+        "Từ chỉ vị giác: 好吃 (hǎochī) - ngon miệng",
+        "Mẫu câu siêu ngắn: 我想吃苹果 (Tôi muốn ăn táo)",
+        "Từ ghép mở rộng: 吃饭 (chī fàn), 早饭 (zǎofàn)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-an-1',
+        word: '吃',
+        pinyin: 'chī',
+        meaning: 'Ăn',
+        typingGuide: "Gõ pinyin: 'chi' -> chọn số 1 chữ 吃",
+        radicalOrStrokes: 'Có bộ Khẩu (口: cái miệng) bên trái, vì ăn uống thì dùng đến miệng!',
+        exampleSentence: '我想吃苹果。',
+        examplePinyin: 'Wǒ xiǎng chī píngguǒ.',
+        exampleMeaning: 'Tôi muốn ăn quả táo.',
+        relatedWords: [
+          { word: '吃饭', pinyin: 'chī fàn', meaning: 'Ăn cơm' },
+          { word: '小吃', pinyin: 'xiǎochī', meaning: 'Đồ ăn vặt' },
+          { word: '早饭', pinyin: 'zǎofàn', meaning: 'Bữa sáng' },
+        ],
+      },
+      {
+        id: 'mm-an-2',
+        word: '好吃',
+        pinyin: 'hǎo chī',
+        meaning: 'Ngon, ngon miệng',
+        typingGuide: "Gõ pinyin: 'haochi' -> chọn chữ 好吃",
+        radicalOrStrokes: 'Ghép bởi chữ 好 (tốt, thích) và chữ 吃 (ăn) -> ăn thấy ngon.',
+        exampleSentence: '米饭很好吃。',
+        examplePinyin: 'Mǐfàn hěn hǎochī.',
+        exampleMeaning: 'Cơm rất là ngon.',
+        relatedWords: [
+          { word: '好看', pinyin: 'hǎokàn', meaning: 'Đẹp mắt' },
+          { word: '好听', pinyin: 'hǎotīng', meaning: 'Nghe hay' },
+          { word: '不好吃', pinyin: 'bù hǎochī', meaning: 'Không ngon' },
+        ],
+      },
+      {
+        id: 'mm-an-3',
+        word: '米饭',
+        pinyin: 'mǐ fàn',
+        meaning: 'Cơm trắng',
+        typingGuide: "Gõ pinyin: 'mifan' -> chọn chữ 米饭",
+        radicalOrStrokes: 'Chữ 米 (hạt gạo) và chữ 饭 có bộ Thực (饣: thức ăn).',
+        exampleSentence: '我爱吃米饭。',
+        examplePinyin: 'Wǒ ài chī mǐfàn.',
+        exampleMeaning: 'Tôi thích ăn cơm trắng.',
+        relatedWords: [
+          { word: '大米', pinyin: 'dàmǐ', meaning: 'Gạo tẻ' },
+          { word: '白饭', pinyin: 'báifàn', meaning: 'Cơm trắng' },
+          { word: '炒饭', pinyin: 'chǎofàn', meaning: 'Cơm rang' },
+        ],
+      },
+      {
+        id: 'mm-an-4',
+        word: '喝',
+        pinyin: 'hē',
+        meaning: 'Uống (đi liền với ăn)',
+        typingGuide: "Gõ pinyin: 'he' -> chọn chữ 喝",
+        radicalOrStrokes: 'Có bộ Khẩu (口: miệng) ở phía trước chỉ hành động uống.',
+        exampleSentence: '我想喝水。',
+        examplePinyin: 'Wǒ xiǎng hē shuǐ.',
+        exampleMeaning: 'Tôi muốn uống nước.',
+        relatedWords: [
+          { word: '喝茶', pinyin: 'hē chá', meaning: 'Uống trà' },
+          { word: '饮料', pinyin: 'yǐnliào', meaning: 'Đồ uống' },
+          { word: '吃喝', pinyin: 'chī hē', meaning: 'Ăn uống' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-an-1', chinese: '我喜欢吃米饭。', pinyin: 'Wǒ xǐhuān chī mǐfàn.', vietnamese: 'Tôi thích ăn cơm.' },
+      { id: 's-an-2', chinese: '苹果很好吃。', pinyin: 'Píngguǒ hěn hǎochī.', vietnamese: 'Táo rất là ngon.' },
+      { id: 's-an-3', chinese: '我们一起去吃饭吧。', pinyin: 'Wǒmen yīqǐ qù chīfàn ba.', vietnamese: 'Chúng mình cùng đi ăn cơm nhé.' },
+      { id: 's-an-4', chinese: '今天你想吃什么？', pinyin: 'Jīntiān nǐ xiǎng chī shénme?', vietnamese: 'Hôm nay bạn muốn ăn món gì?' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 3. TỪ: HỌC (学 / 学习)
+  học: {
+    title: 'Sơ đồ tư duy từ: Học (学习) • Trường lớp & Tri thức',
+    originalInput: 'học',
+    inputType: 'text',
+    recognizedText: '我很喜欢学习中文。在学校里，老师教我们读生字。同学们一起认真学习。',
+    vietnameseTranslation: 'Tôi rất thích học tiếng Trung. Ở trường, thầy cô dạy chúng tôi đọc từ mới. Các bạn học sinh cùng nhau học tập chăm chỉ.',
+    fullPinyin: 'Wǒ hěn xǐhuān xuéxí zhōngwén. Zài xuéxiào lǐ, lǎoshī jiāo wǒmen dú shēngzì. Tóngxuémen yīqǐ rènzhēn xuéxí.',
+    centralTopic: {
+      word: '学习',
+      pinyin: 'xué xí',
+      meaning: 'Học tập, rèn luyện',
+      category: 'Động từ giáo dục',
+    },
+    summary: {
+      chinese: '围绕‘学习’展开思维导图，涵盖老师、学校、汉语等高频词，帮助初学者快速掌握学习场景的表达。',
+      pinyin: "Wéirào 'xuéxí' zhǎnkāi sīwéi dǎotú, hángài lǎoshī, xuéxiào, hànyǔ děng gāopín cí, bāngzhù chūxuézhě kuàisù zhǎngwò xuéxí chǎngjǐng de biǎodá.",
+      vietnamese: 'Mở rộng sơ đồ tư duy từ chữ Học, bao gồm thầy cô, trường học, chữ Hán, giúp học sinh nắm vững cách nói về việc học tập.',
+      keyPoints: [
+        "Từ trọng tâm: 学习 (xuéxí) - Học tập",
+        "Chủ thể dạy học: 老师 (lǎoshī) - Thầy cô giáo",
+        "Địa điểm học: 学校 (xuéxiào) - Trường học",
+        "Bạn học cùng: 同学 (tóngxué) - Bạn cùng lớp",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-hoc-1',
+        word: '学习',
+        pinyin: 'xué xí',
+        meaning: 'Học tập',
+        typingGuide: "Gõ pinyin: 'xuexi' -> chọn 学习",
+        radicalOrStrokes: 'Chữ 学 có ba chấm đầu tượng hình ánh sáng tri thức rọi sáng tâm trí.',
+        exampleSentence: '我每天学习中文。',
+        examplePinyin: 'Wǒ měitiān xuéxí zhōngwén.',
+        exampleMeaning: 'Mỗi ngày tôi đều học tiếng Trung.',
+        relatedWords: [
+          { word: '自学', pinyin: 'zìxué', meaning: 'Tự học' },
+          { word: '学生', pinyin: 'xuésheng', meaning: 'Học sinh' },
+        ],
+      },
+      {
+        id: 'mm-hoc-2',
+        word: '学校',
+        pinyin: 'xué xiào',
+        meaning: 'Trường học',
+        typingGuide: "Gõ pinyin: 'xuexiao' -> chọn 学校",
+        radicalOrStrokes: 'Chữ 校 có bộ Mộc (木: gỗ), vì trường học xưa dựng bằng cột gỗ.',
+        exampleSentence: '我们的学校很大。',
+        examplePinyin: 'Wǒmen de xuéxiào hěn dà.',
+        exampleMeaning: 'Trường học của chúng tôi rất to lớn.',
+        relatedWords: [
+          { word: '小学校', pinyin: 'xiǎoxuéxiào', meaning: 'Trường tiểu học' },
+          { word: '中学校', pinyin: 'zhōngxuéxiào', meaning: 'Trường trung học' },
+        ],
+      },
+      {
+        id: 'mm-hoc-3',
+        word: '老师',
+        pinyin: 'lǎo shī',
+        meaning: 'Thầy giáo, cô giáo',
+        typingGuide: "Gõ pinyin: 'laoshi' -> chọn 老师",
+        radicalOrStrokes: 'Chữ 老 (lão) biểu thị người đi trước giàu kinh nghiệm và tri thức.',
+        exampleSentence: '老师好！',
+        examplePinyin: 'Lǎoshī hǎo!',
+        exampleMeaning: 'Em chào thầy cô ạ!',
+        relatedWords: [
+          { word: '王老师', pinyin: 'Wáng lǎoshī', meaning: 'Thầy Vương' },
+          { word: '班主任', pinyin: 'bānzhǔrèn', meaning: 'Giáo viên chủ nhiệm' },
+        ],
+      },
+      {
+        id: 'mm-hoc-4',
+        word: '生字',
+        pinyin: 'shēng zì',
+        meaning: 'Từ mới, chữ mới',
+        typingGuide: "Gõ pinyin: 'shengzi' -> chọn 生字",
+        radicalOrStrokes: 'Chữ 生 (sinh sôi) ghép với chữ 字 (chữ viết) -> từ mới sinh ra cần học.',
+        exampleSentence: '今天我们学五个生字。',
+        examplePinyin: 'Jīntiān wǒmen xué wǔ gè shēngzì.',
+        exampleMeaning: 'Hôm nay chúng mình học năm từ mới.',
+        relatedWords: [
+          { word: '汉字', pinyin: 'hànzì', meaning: 'Chữ Hán' },
+          { word: '生词', pinyin: 'shēngcí', meaning: 'Từ vựng mới' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-hoc-1', chinese: '我很喜欢学习中文。', pinyin: 'Wǒ hěn xǐhuān xuéxí zhōngwén.', vietnamese: 'Tôi rất thích học tiếng Trung.' },
+      { id: 's-hoc-2', chinese: '在学校里，老师教我们读生字。', pinyin: 'Zài xuéxiào lǐ, lǎoshī jiāo wǒmen dú shēngzì.', vietnamese: 'Ở trường, thầy cô dạy chúng tôi đọc từ mới.' },
+      { id: 's-hoc-3', chinese: '同学们一起认真学习。', pinyin: 'Tóngxuémen yīqǐ rènzhēn xuéxí.', vietnamese: 'Các bạn học sinh cùng nhau học tập chăm chỉ.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 4. TỪ: UỐNG (喝)
+  uống: {
+    title: 'Sơ đồ tư duy từ: Uống (喝) • Nước uống & Trà',
+    originalInput: 'uống',
+    inputType: 'text',
+    recognizedText: '天气很热，我想喝水。爸爸喜欢喝绿茶。我们一起喝果汁吧。',
+    vietnameseTranslation: 'Thời tiết rất nóng, tôi muốn uống nước. Bố thích uống trà xanh. Chúng mình cùng uống nước hoa quả nhé.',
+    fullPinyin: 'Tiānqì hěn rè, wǒ xiǎng hē shuǐ. Bàba xǐhuān hē lǜchá. Wǒmen yīqǐ hē guǒzhī ba.',
+    centralTopic: {
+      word: '喝',
+      pinyin: 'hē',
+      meaning: 'Uống (chất lỏng)',
+      category: 'Động từ ăn uống',
+    },
+    summary: {
+      chinese: '围绕‘喝’字学习日常生活饮料词汇，包括水、茶、果汁等，并掌握‘我想喝水’等日常实用句型。',
+      pinyin: "Wéirào 'hē' zì xuéxí rìcháng shēnghuó yǐnliào cíhuì, bāokuò shuǐ, chá, guǒzhī děng, bìng zhǎngwò 'Wǒ xiǎng hē shuǐ' děng rìcháng shíyòng jùxíng.",
+      vietnamese: "Học động từ 'Uống' (喝) cùng các loại thức uống quen thuộc như nước lọc, trà, nước ép. Mẫu câu ngắn: Tôi muốn uống nước.",
+      keyPoints: [
+        "Từ trung tâm: 喝 (hē) - gõ pinyin 'he'",
+        "Đồ uống cơ bản nhất: 水 (shuǐ) - Nước",
+        "Văn hóa trà: 茶 (chá) - Trà",
+        "Nước hoa quả: 果汁 (guǒzhī)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-uong-1',
+        word: '喝',
+        pinyin: 'hē',
+        meaning: 'Uống',
+        typingGuide: "Gõ pinyin: 'he' -> chọn 喝",
+        radicalOrStrokes: 'Có bộ Khẩu (口) bên trái biểu thị việc dùng miệng uống.',
+        exampleSentence: '我想喝水。',
+        examplePinyin: 'Wǒ xiǎng hē shuǐ.',
+        exampleMeaning: 'Tôi muốn uống nước.',
+        relatedWords: [
+          { word: '好喝', pinyin: 'hǎohē', meaning: 'Uống ngon' },
+          { word: '喝茶', pinyin: 'hē chá', meaning: 'Uống trà' },
+        ],
+      },
+      {
+        id: 'mm-uong-2',
+        word: '水',
+        pinyin: 'shuǐ',
+        meaning: 'Nước lọc',
+        typingGuide: "Gõ pinyin: 'shui' -> chọn 水",
+        radicalOrStrokes: 'Tượng hình dòng nước uốn lượn và các giọt nước bắn ra xung quanh.',
+        exampleSentence: '请喝温水。',
+        examplePinyin: 'Qǐng hē wēnshuǐ.',
+        exampleMeaning: 'Mời bạn uống nước ấm.',
+        relatedWords: [
+          { word: '开水', pinyin: 'kāishuǐ', meaning: 'Nước sôi' },
+          { word: '矿泉水', pinyin: 'kuàngquánshuǐ', meaning: 'Nước khoáng' },
+        ],
+      },
+      {
+        id: 'mm-uong-3',
+        word: '茶',
+        pinyin: 'chá',
+        meaning: 'Trà, chè',
+        typingGuide: "Gõ pinyin: 'cha' -> chọn 茶",
+        radicalOrStrokes: 'Bộ Thảo đầu (艹: lá trà), bộ Nhân (人: người hái) và bộ Mộc (木: cây trà).',
+        exampleSentence: '爸爸爱喝茶。',
+        examplePinyin: 'Bàba ài hē chá.',
+        exampleMeaning: 'Bố tôi rất thích uống trà.',
+        relatedWords: [
+          { word: '绿茶', pinyin: 'lǜchá', meaning: 'Trà xanh' },
+          { word: '奶茶', pinyin: 'nǎichá', meaning: 'Trà sữa' },
+        ],
+      },
+      {
+        id: 'mm-uong-4',
+        word: '果汁',
+        pinyin: 'guǒ zhī',
+        meaning: 'Nước ép hoa quả',
+        typingGuide: "Gõ pinyin: 'guozhi' -> chọn 果汁",
+        radicalOrStrokes: 'Quả (果) kết hợp với Trấp (汁: nước ép có 3 chấm thủy).',
+        exampleSentence: '果汁很甜。',
+        examplePinyin: 'Guǒzhī hěn tián.',
+        exampleMeaning: 'Nước hoa quả rất ngọt ngào.',
+        relatedWords: [
+          { word: '苹果汁', pinyin: 'píngguǒzhī', meaning: 'Nước ép táo' },
+          { word: '橙汁', pinyin: 'chéngzhī', meaning: 'Nước cam' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-uong-1', chinese: '天气很热，我想喝水。', pinyin: 'Tiānqì hěn rè, wǒ xiǎng hē shuǐ.', vietnamese: 'Thời tiết rất nóng, tôi muốn uống nước.' },
+      { id: 's-uong-2', chinese: '爸爸喜欢喝绿茶。', pinyin: 'Bàba xǐhuān hē lǜchá.', vietnamese: 'Bố thích uống trà xanh.' },
+      { id: 's-uong-3', chinese: '我们一起喝果汁吧。', pinyin: 'Wǒmen yīqǐ hē guǒzhī ba.', vietnamese: 'Chúng mình cùng uống nước hoa quả nhé.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 5. TỪ: BẠN BÈ (朋友)
+  'bạn bè': {
+    title: 'Sơ đồ tư duy từ: Bạn bè (朋友) • Tình bạn & Vui chơi',
+    originalInput: 'bạn bè',
+    inputType: 'text',
+    recognizedText: '他是我的好朋友。我们每天一起玩游戏。有朋友在身边，我很开心。',
+    vietnameseTranslation: 'Cậu ấy là bạn tốt của tôi. Mỗi ngày chúng tôi đều cùng nhau chơi trò chơi. Có bạn bè ở bên cạnh, tôi cảm thấy rất vui vẻ.',
+    fullPinyin: 'Tā shì wǒ de hǎo péngyǒu. Wǒmen měitiān yīqǐ wán yóuxì. Yǒu péngyǒu zài shēnbiān, wǒ hěn kāixīn.',
+    centralTopic: {
+      word: '朋友',
+      pinyin: 'péng you',
+      meaning: 'Bạn bè, bạn thân',
+      category: 'Danh từ mối quan hệ',
+    },
+    summary: {
+      chinese: '本课学习表达友谊的核心词汇‘朋友’，以及好朋友、开心、一起等日常高频交际用词。',
+      pinyin: "Běn kè xuéxí biǎodá yǒuyì de héxīn cíhuì 'péngyǒu', yǐjí hǎo péngyǒu, kāixīn, yīqǐ děng rìcháng gāopín jiāojì yòngcí.",
+      vietnamese: "Bài học giúp học sinh làm quen với từ 'Bạn bè' (朋友), cùng cách diễn đạt tình bạn thân thiết và niềm vui khi học cùng bạn.",
+      keyPoints: [
+        "Từ trung tâm: 朋友 (péngyou) - Bạn bè",
+        "Bạn tốt: 好朋友 (hǎo péngyou)",
+        "Tâm trạng vui vẻ: 开心 (kāixīn)",
+        "Cùng nhau: 一起 (yīqǐ)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-bb-1',
+        word: '朋友',
+        pinyin: 'péng you',
+        meaning: 'Bạn bè',
+        typingGuide: "Gõ pinyin: 'pengyou' -> chọn 朋友",
+        radicalOrStrokes: 'Chữ 朋 có 2 chữ Nguyệt (月) song hành như hai người bạn kề vai sát cánh.',
+        exampleSentence: '他是我的朋友。',
+        examplePinyin: 'Tā shì wǒ de péngyǒu.',
+        exampleMeaning: 'Cậu ấy là bạn của tôi.',
+        relatedWords: [
+          { word: '好朋友', pinyin: 'hǎo péngyou', meaning: 'Bạn thân' },
+          { word: '老朋友', pinyin: 'lǎo péngyou', meaning: 'Bạn cũ lâu năm' },
+        ],
+      },
+      {
+        id: 'mm-bb-2',
+        word: '玩',
+        pinyin: 'wán',
+        meaning: 'Chơi, vui chơi',
+        typingGuide: "Gõ pinyin: 'wan' -> chọn 玩",
+        radicalOrStrokes: 'Có bộ Vương (王: ngọc quý), chơi đùa nâng niu đồ chơi quý báu.',
+        exampleSentence: '我们去玩吧。',
+        examplePinyin: 'Wǒmen qù wán ba.',
+        exampleMeaning: 'Chúng mình cùng đi chơi đi!',
+        relatedWords: [
+          { word: '玩儿', pinyin: 'wánr', meaning: 'Chơi đùa' },
+          { word: '好玩', pinyin: 'hǎowán', meaning: 'Thú vị, vui nhộn' },
+        ],
+      },
+      {
+        id: 'mm-bb-3',
+        word: '开心',
+        pinyin: 'kāi xīn',
+        meaning: 'Vui vẻ, phấn khởi',
+        typingGuide: "Gõ pinyin: 'kaixin' -> chọn 开心",
+        radicalOrStrokes: 'Chữ Khai (开: mở ra) kết hợp chữ Tâm (心: trái tim) -> mở rộng tấm lòng thấy vui vẻ.',
+        exampleSentence: '今天我很开心。',
+        examplePinyin: 'Jīntiān wǒ hěn kāixīn.',
+        exampleMeaning: 'Hôm nay tôi rất là vui.',
+        relatedWords: [
+          { word: '快乐', pinyin: 'kuàilè', meaning: 'Hạnh phúc, vui sướng' },
+          { word: '高兴', pinyin: 'gāoxìng', meaning: 'Hào hứng, vui mừng' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-bb-1', chinese: '他是我的好朋友。', pinyin: 'Tā shì wǒ de hǎo péngyǒu.', vietnamese: 'Cậu ấy là bạn tốt của tôi.' },
+      { id: 's-bb-2', chinese: '我们每天一起玩游戏。', pinyin: 'Wǒmen měitiān yīqǐ wán yóuxì.', vietnamese: 'Mỗi ngày chúng tôi đều cùng nhau chơi trò chơi.' },
+      { id: 's-bb-3', chinese: '有朋友在身边，我很开心。', pinyin: 'Yǒu péngyǒu zài shēnbiān, wǒ hěn kāixīn.', vietnamese: 'Có bạn bè ở bên cạnh, tôi cảm thấy rất vui vẻ.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 6. TỪ: TRƯỜNG HỌC (学校)
+  'trường học': {
+    title: 'Sơ đồ tư duy từ: Trường học (学校) • Thầy cô & Lớp học',
+    originalInput: 'trường học',
+    inputType: 'text',
+    recognizedText: '我的学校很美丽。学校里有大操场。老师和同学们都在这里。我爱我的学校。',
+    vietnameseTranslation: 'Trường học của tôi rất đẹp. Trong trường có một sân vận động lớn. Thầy cô và bạn bè đều ở đây. Tôi yêu ngôi trường của mình.',
+    fullPinyin: 'Wǒ de xuéxiào hěn měilì. Xuéxiào lǐ yǒu dà cāochǎng. Lǎoshī hé tóngxuémen dōu zài zhèlǐ. Wǒ ài wǒ de xuéxiào.',
+    centralTopic: {
+      word: '学校',
+      pinyin: 'xué xiào',
+      meaning: 'Trường học, mái trường thân thương',
+      category: 'Danh từ địa điểm',
+    },
+    summary: {
+      chinese: '围绕核心词‘学校’，学习操场、美丽、老师等校园词汇，掌握‘我的学校很美丽’等优美短句。',
+      pinyin: "Wéirào héxīn cí 'xuéxiào', xuéxí cāochǎng, měilì, lǎoshī děng xiàoyuán cíhuì, zhǎngwò 'Wǒ de xuéxiào hěn měilì' děng yōuměi duǎnjù.",
+      vietnamese: "Học từ 'Trường học' (学校) và các sự vật quen thuộc trong khuôn viên trường như sân chơi, thầy cô giáo, lớp học.",
+      keyPoints: [
+        "Từ trung tâm: 学校 (xuéxiào) - Trường học",
+        "Sân tập thể dục: 操场 (cāochǎng)",
+        "Tính từ miêu tả: 美丽 (měilì) - Xinh đẹp",
+        "Bày tỏ tình cảm: 我爱我的学校 (Tôi yêu trường của tôi)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-th-1',
+        word: '学校',
+        pinyin: 'xué xiào',
+        meaning: 'Trường học',
+        typingGuide: "Gõ pinyin: 'xuexiao' -> chọn 学校",
+        radicalOrStrokes: 'Chữ 校 có bộ Mộc (木) gợi nhớ hàng cây rợp bóng mát quanh sân trường.',
+        exampleSentence: '这是我的学校。',
+        examplePinyin: 'Zhè shì wǒ de xuéxiào.',
+        exampleMeaning: 'Đây là trường học của tôi.',
+        relatedWords: [
+          { word: '校园', pinyin: 'xiàoyuán', meaning: 'Khuôn viên trường' },
+          { word: '校服', pinyin: 'xiàofú', meaning: 'Đồng phục học sinh' },
+        ],
+      },
+      {
+        id: 'mm-th-2',
+        word: '操场',
+        pinyin: 'cāo chǎng',
+        meaning: 'Sân tập, sân trường',
+        typingGuide: "Gõ pinyin: 'caochang' -> chọn 操场",
+        radicalOrStrokes: 'Chữ 操 có bộ Thủ (扌: tay rèn luyện) ghép với Trường (场: bãi đất rộng).',
+        exampleSentence: '操场很大。',
+        examplePinyin: 'Cāochǎng hěn dà.',
+        exampleMeaning: 'Sân trường rất là rộng.',
+        relatedWords: [
+          { word: '跑步', pinyin: 'pǎobù', meaning: 'Chạy bộ' },
+          { word: '做操', pinyin: 'zuò cāo', meaning: 'Tập thể dục' },
+        ],
+      },
+      {
+        id: 'mm-th-3',
+        word: '教室',
+        pinyin: 'jiào shì',
+        meaning: 'Phòng học, lớp học',
+        typingGuide: "Gõ pinyin: 'jiaoshi' -> chọn 教室",
+        radicalOrStrokes: 'Chữ Giáo (教: dạy dỗ) ghép với Thất (室: căn phòng có mái che 宀).',
+        exampleSentence: '教室很干净。',
+        examplePinyin: 'Jiàoshì hěn gānjìng.',
+        exampleMeaning: 'Phòng học rất sạch sẽ.',
+        relatedWords: [
+          { word: '黑板', pinyin: 'hēibǎn', meaning: 'Bảng đen' },
+          { word: '桌子', pinyin: 'zhuōzi', meaning: 'Cái bàn' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-th-1', chinese: '我的学校很美丽。', pinyin: 'Wǒ de xuéxiào hěn měilì.', vietnamese: 'Trường học của tôi rất đẹp.' },
+      { id: 's-th-2', chinese: '学校里有大操场。', pinyin: 'Xuéxiào lǐ yǒu dà cāochǎng.', vietnamese: 'Trong trường có một sân chơi lớn.' },
+      { id: 's-th-3', chinese: '老师和同学们都在这里。', pinyin: 'Lǎoshī hé tóngxuémen dōu zài zhèlǐ.', vietnamese: 'Thầy cô và các bạn học sinh đều ở đây.' },
+      { id: 's-th-4', chinese: '我爱我的学校。', pinyin: 'Wǒ ài wǒ de xuéxiào.', vietnamese: 'Tôi yêu ngôi trường của mình.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 7. TỪ: HOA QUẢ (水果)
+  'hoa quả': {
+    title: 'Sơ đồ tư duy từ: Hoa quả (水果) • Trái cây tươi ngon',
+    originalInput: 'hoa quả',
+    inputType: 'text',
+    recognizedText: '桌子上有很多水果。我最喜欢吃红苹果。西瓜又大又甜。吃水果对身体好。',
+    vietnameseTranslation: 'Trên bàn có rất nhiều hoa quả. Tôi thích ăn nhất là táo đỏ. Dưa hấu vừa to vừa ngọt. Ăn trái cây rất tốt cho cơ thể.',
+    fullPinyin: 'Zhuōzi shàng yǒu hěn duō shuǐguǒ. Wǒ zuì xǐhuān chī hóng píngguǒ. Xīguā yòu dà yòu tián. Chī shuǐguǒ duì shēntǐ hǎo.',
+    centralTopic: {
+      word: '水果',
+      pinyin: 'shuǐ guǒ',
+      meaning: 'Hoa quả, trái cây nhiều nước thơm ngon',
+      category: 'Danh từ thực phẩm',
+    },
+    summary: {
+      chinese: '围绕‘水果’主题，认识苹果、西瓜、甜等词汇，掌握‘我最喜欢吃红苹果’等日常口语。',
+      pinyin: "Wéirào 'shuǐguǒ' zhǔtí, rènshí píngguǒ, xīguā, tián děng cíhuì, zhǎngwò 'Wǒ zuì xǐhuān chī hóng píngguǒ' děng rìcháng kǒuyǔ.",
+      vietnamese: "Khám phá chủ đề 'Hoa quả' (水果) với các loại quả phổ biến như táo, dưa hấu, chuối cùng tính từ ngọt ngào (甜).",
+      keyPoints: [
+        "Từ trung tâm: 水果 (shuǐguǒ) - Quả mọng nước",
+        "Quả táo: 苹果 (píngguǒ)",
+        "Quả dưa hấu: 西瓜 (xīguā)",
+        "Vị ngọt: 甜 (tián)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-hq-1',
+        word: '水果',
+        pinyin: 'shuǐ guǒ',
+        meaning: 'Hoa quả, trái cây',
+        typingGuide: "Gõ pinyin: 'shuiguo' -> chọn 水果",
+        radicalOrStrokes: 'Ghép bởi chữ Thủy (水: mọng nước) và Quả (果: thành quả trên cây).',
+        exampleSentence: '我爱吃水果。',
+        examplePinyin: 'Wǒ ài chī shuǐguǒ.',
+        exampleMeaning: 'Tôi rất thích ăn hoa quả.',
+        relatedWords: [
+          { word: '买水果', pinyin: 'mǎi shuǐguǒ', meaning: 'Mua trái cây' },
+          { word: '新鲜水果', pinyin: 'xīnxiān shuǐguǒ', meaning: 'Hoa quả tươi' },
+        ],
+      },
+      {
+        id: 'mm-hq-2',
+        word: '苹果',
+        pinyin: 'píng guǒ',
+        meaning: 'Quả táo tây',
+        typingGuide: "Gõ pinyin: 'pingguo' -> chọn 苹果",
+        radicalOrStrokes: 'Chữ 苹 có bộ Thảo đầu (艹: loài cây cỏ quả mọc).',
+        exampleSentence: '这个苹果很红。',
+        examplePinyin: 'Zhège píngguǒ hěn hóng.',
+        exampleMeaning: 'Quả táo này rất đỏ.',
+        relatedWords: [
+          { word: '红苹果', pinyin: 'hóng píngguǒ', meaning: 'Táo đỏ' },
+          { word: '苹果汁', pinyin: 'píngguǒzhī', meaning: 'Nước ép táo' },
+        ],
+      },
+      {
+        id: 'mm-hq-3',
+        word: '西瓜',
+        pinyin: 'xī guā',
+        meaning: 'Quả dưa hấu',
+        typingGuide: "Gõ pinyin: 'xigua' -> chọn 西瓜",
+        radicalOrStrokes: 'Ghép từ Tây (西: hướng tây du nhập vào) và Oa (瓜: họ dưa bầu bí).',
+        exampleSentence: '西瓜很甜。',
+        examplePinyin: 'Xīguā hěn tián.',
+        exampleMeaning: 'Dưa hấu rất là ngọt.',
+        relatedWords: [
+          { word: '吃西瓜', pinyin: 'chī xīguā', meaning: 'Ăn dưa hấu' },
+          { word: '瓜子', pinyin: 'guāzǐ', meaning: 'Hạt dưa' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-hq-1', chinese: '桌子上有很多水果。', pinyin: 'Zhuōzi shàng yǒu hěn duō shuǐguǒ.', vietnamese: 'Trên bàn có rất nhiều hoa quả.' },
+      { id: 's-hq-2', chinese: '我最喜欢吃红苹果。', pinyin: 'Wǒ zuì xǐhuān chī hóng píngguǒ.', vietnamese: 'Tôi thích ăn nhất là táo đỏ.' },
+      { id: 's-hq-3', chinese: '西瓜又大又甜。', pinyin: 'Xīguā yòu dà yòu tián.', vietnamese: 'Dưa hấu vừa to vừa ngọt.' },
+      { id: 's-hq-4', chinese: '吃水果对身体好。', pinyin: 'Chī shuǐguǒ duì shēntǐ hǎo.', vietnamese: 'Ăn hoa quả rất tốt cho cơ thể.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+
+  // 8. TỪ: GIA ĐÌNH (家 / 家庭)
+  'gia đình': {
+    title: 'Sơ đồ tư duy từ: Gia đình (家) • Tình thân & Mái ấm',
+    originalInput: 'gia đình',
+    inputType: 'text',
+    recognizedText: '我家有四口人。爸爸、妈妈、哥哥和我。我们一家人相亲相爱，生活很幸福。',
+    vietnameseTranslation: 'Nhà tôi có bốn người. Bố, mẹ, anh trai và tôi. Cả gia đình chúng tôi yêu thương nhau, cuộc sống rất hạnh phúc.',
+    fullPinyin: 'Wǒ jiā yǒu sì kǒu rén. Bàba, māmā, gēge hé wǒ. Wǒmen yījiā rén xiāngqīn xiāng’ài, shēnghuó hěn xìngfú.',
+    centralTopic: {
+      word: '家',
+      pinyin: 'jiā',
+      meaning: 'Nhà, gia đình, mái ấm sum vầy',
+      category: 'Danh từ tình cảm',
+    },
+    summary: {
+      chinese: '围绕‘家’字学习家庭成员称谓，包括爸爸、妈妈、哥哥等，体会家的温馨与幸福。',
+      pinyin: "Wéirào 'jiā' zì xuéxí jiātíng chéngyuán chēngwèi, bāokuò bàba, māmā, gēge děng, tǐhuì jiā de wēnxīn yǔ xìngfú.",
+      vietnamese: "Học từ 'Nhà / Gia đình' (家) và cách gọi các thành viên thân thương trong gia đình như bố, mẹ, anh chị em.",
+      keyPoints: [
+        "Từ trung tâm: 家 (jiā) - Nhà, gia đình",
+        "Bộ thủ: Bộ Miên (宀: mái nhà che chở)",
+        "Thành viên: 爸爸 (bố), 妈妈 (mẹ)",
+        "Đếm nhân khẩu: 口人 (kǒu rén)",
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-gd-1',
+        word: '家',
+        pinyin: 'jiā',
+        meaning: 'Nhà, gia đình',
+        typingGuide: "Gõ pinyin: 'jia' -> chọn 家",
+        radicalOrStrokes: 'Có bộ Miên (宀) là mái nhà che mưa che nắng, bên trong là bộ Thỉ (豕) ấm no.',
+        exampleSentence: '我爱我的家。',
+        examplePinyin: 'Wǒ ài wǒ de jiā.',
+        exampleMeaning: 'Tôi yêu gia đình của tôi.',
+        relatedWords: [
+          { word: '回家', pinyin: 'huí jiā', meaning: 'Về nhà' },
+          { word: '家人', pinyin: 'jiārén', meaning: 'Người nhà' },
+        ],
+      },
+      {
+        id: 'mm-gd-2',
+        word: '爸爸',
+        pinyin: 'bà ba',
+        meaning: 'Bố, cha',
+        typingGuide: "Gõ pinyin: 'baba' -> chọn 爸爸",
+        radicalOrStrokes: 'Có bộ Phụ (父: người cha) ở trên chỉ người cha trụ cột.',
+        exampleSentence: '爸爸在看书。',
+        examplePinyin: 'Bàba zài kànshū.',
+        exampleMeaning: 'Bố đang đọc sách.',
+        relatedWords: [
+          { word: '父亲', pinyin: 'fùqīn', meaning: 'Phụ thân' },
+          { word: '老爸', pinyin: 'lǎobà', meaning: 'Bố già thân yêu' },
+        ],
+      },
+      {
+        id: 'mm-gd-3',
+        word: '妈妈',
+        pinyin: 'mā ma',
+        meaning: 'Mẹ, má',
+        typingGuide: "Gõ pinyin: 'mama' -> chọn 妈妈",
+        radicalOrStrokes: 'Có bộ Nữ (女: người phụ nữ) bên cạnh chữ Mã (马) chỉ âm đọc má.',
+        exampleSentence: '妈妈做饭很好吃。',
+        examplePinyin: 'Māmā zuò fàn hěn hǎochī.',
+        exampleMeaning: 'Mẹ nấu ăn rất ngon.',
+        relatedWords: [
+          { word: '母亲', pinyin: 'mǔqīn', meaning: 'Mẫu thân' },
+          { word: '老妈', pinyin: 'lǎomā', meaning: 'Mẹ yêu' },
+        ],
+      },
+    ],
+    sentences: [
+      { id: 's-gd-1', chinese: '我家有四口人。', pinyin: 'Wǒ jiā yǒu sì kǒu rén.', vietnamese: 'Nhà tôi có bốn người.' },
+      { id: 's-gd-2', chinese: '爸爸、妈妈、哥哥和我。', pinyin: 'Bàba, māmā, gēge hé wǒ.', vietnamese: 'Bố, mẹ, anh trai và tôi.' },
+      { id: 's-gd-3', chinese: '我们一家人相亲相爱。', pinyin: 'Wǒmen yījiā rén xiāngqīn xiāng’ài.', vietnamese: 'Gia đình chúng tôi luôn yêu thương đùm bọc nhau.' },
+    ],
+    createdDate: new Date().toISOString(),
+  },
+};
+
+// Aliases mapping for common student queries
+const QUERY_ALIASES: Record<string, string> = {
+  di: 'đi',
+  'đi lại': 'đi',
+  qu: 'đi',
+  zou: 'đi',
+  去: 'đi',
+  走: 'đi',
+  an: 'ăn',
+  chi: 'ăn',
+  吃: 'ăn',
+  hoc: 'học',
+  xue: 'học',
+  xuexi: 'học',
+  学: 'học',
+  学习: 'học',
+  uong: 'uống',
+  he: 'uống',
+  喝: 'uống',
+  ban: 'bạn bè',
+  'ban be': 'bạn bè',
+  pengyou: 'bạn bè',
+  朋友: 'bạn bè',
+  truong: 'trường học',
+  'truong hoc': 'trường học',
+  xuexiao: 'trường học',
+  学校: 'trường học',
+  nha: 'gia đình',
+  nhà: 'gia đình',
+  'gia dinh': 'gia đình',
+  jia: 'gia đình',
+  家: 'gia đình',
+  'trai cay': 'hoa quả',
+  'trái cây': 'hoa quả',
+  'hoa qua': 'hoa quả',
+  shuiguo: 'hoa quả',
+  水果: 'hoa quả',
+};
+
+// Search database by keyword
+export function findVocabularyInKnowledgeBase(query: string): AnalysisResult | null {
+  if (!query || typeof query !== 'string') return null;
+  const clean = query.trim().toLowerCase();
+
+  // 1. Direct match
+  if (VOCABULARY_DATABASE[clean]) {
+    return { ...VOCABULARY_DATABASE[clean] };
+  }
+
+  // 2. Alias match
+  const alias = QUERY_ALIASES[clean];
+  if (alias && VOCABULARY_DATABASE[alias]) {
+    return { ...VOCABULARY_DATABASE[alias] };
+  }
+
+  // 3. Substring match
+  for (const key of Object.keys(VOCABULARY_DATABASE)) {
+    if (clean === key || clean.includes(key) || key.includes(clean)) {
+      return { ...VOCABULARY_DATABASE[key] };
+    }
+  }
+
+  return null;
+}
+
+// Universal Smart Generator for any other word when AI quota is reached
+export function buildUniversalVocabularyLesson(inputWord: string): AnalysisResult {
+  const trimmed = inputWord.trim();
+  const title = `Sơ đồ tư duy từ vựng: ${trimmed} • Mở rộng câu ngắn`;
+
+  return {
+    title,
+    originalInput: trimmed,
+    inputType: 'text',
+    recognizedText: `今天我们学习词语‘${trimmed}’。这是一个很有用的词汇。请看下面的例句，跟着老师朗读。`,
+    vietnameseTranslation: `Hôm nay chúng ta cùng học từ vựng ‘${trimmed}’. Đây là một từ vựng rất quen thuộc và hữu ích. Hãy xem các câu ví dụ và luyện đọc theo nhé.`,
+    fullPinyin: `Jīntiān wǒmen xuéxí cíyǔ ‘${trimmed}’. Zhè shì yī gè hěn yǒuyòng de cíhuì. Qǐng kàn xiàmiàn de lìjù, gēnzhe lǎoshī lǎngdú.`,
+    centralTopic: {
+      word: trimmed,
+      pinyin: 'cí huì',
+      meaning: `Từ khóa: ${trimmed}`,
+      category: 'Từ vựng thông dụng',
+    },
+    summary: {
+      chinese: `本课精选与‘${trimmed}’相关的基础词汇与短句，适合初学者逐步练习发音与汉字记忆。`,
+      pinyin: `Běn kè jīngxuǎn yǔ ‘${trimmed}’ xiāngguān de jīchǔ cíhuì yǔ duǎnjù, shìhé chūxuézhě zhúbù liànxí fāyīn yǔ hànzì jìyì.`,
+      vietnamese: `Bài học mở rộng các từ vựng liên quan tới ‘${trimmed}’ cùng các câu ngắn 4-6 chữ, giúp học sinh dễ nhớ và dễ bắt chước phát âm.`,
+      keyPoints: [
+        `Nắm vững cách đọc và phát âm của từ '${trimmed}'`,
+        'Luyện tập nhận diện mặt chữ Hán và dấu thanh điệu',
+        'Áp dụng ngay vào các câu ngắn đời thường',
+      ],
+    },
+    mindmap: [
+      {
+        id: 'mm-gen-1',
+        word: trimmed,
+        pinyin: 'shēng cí',
+        meaning: `Nghĩa: ${trimmed}`,
+        typingGuide: `Gõ phiên âm Pinyin của từ '${trimmed}' trên bàn phím điện thoại để chọn chữ Hán.`,
+        radicalOrStrokes: 'Chú ý quan sát các nét bút cơ bản để nhớ mặt chữ lâu hơn.',
+        exampleSentence: `我很喜欢‘${trimmed}’。`,
+        examplePinyin: `Wǒ hěn xǐhuān ‘${trimmed}’.`,
+        exampleMeaning: `Tôi rất thích ${trimmed}. (Câu ngắn dễ nhớ)`,
+        relatedWords: [
+          { word: '学习', pinyin: 'xuéxí', meaning: 'Học tập' },
+          { word: '常用', pinyin: 'chángyòng', meaning: 'Thường dùng' },
+        ],
+      },
+      {
+        id: 'mm-gen-2',
+        word: '好',
+        pinyin: 'hǎo',
+        meaning: 'Tốt, đẹp, hay',
+        typingGuide: "Gõ pinyin: 'hao' -> chọn 好",
+        radicalOrStrokes: 'Ghép từ bộ Nữ (女: người phụ nữ) và bộ Tử (子: đứa con) -> tốt đẹp, ấm êm.',
+        exampleSentence: '这个很好。',
+        examplePinyin: 'Zhège hěn hǎo.',
+        exampleMeaning: 'Cái này rất tốt.',
+        relatedWords: [
+          { word: '很好', pinyin: 'hěn hǎo', meaning: 'Rất tốt' },
+          { word: '好看', pinyin: 'hǎokàn', meaning: 'Đẹp mắt' },
+        ],
+      },
+      {
+        id: 'mm-gen-3',
+        word: '喜欢',
+        pinyin: 'xǐ huan',
+        meaning: 'Thích, yêu thích',
+        typingGuide: "Gõ pinyin: 'xihuan' -> chọn 喜欢",
+        radicalOrStrokes: 'Chữ Hỷ (喜) mang lại niềm vui hân hoan rộn rã.',
+        exampleSentence: '你喜欢吗？',
+        examplePinyin: 'Nǐ xǐhuān ma?',
+        exampleMeaning: 'Bạn có thích không?',
+        relatedWords: [
+          { word: '爱好', pinyin: 'àihào', meaning: 'Sở thích' },
+          { word: '欢喜', pinyin: 'huānxǐ', meaning: 'Vui mừng' },
+        ],
+      },
+    ],
+    sentences: [
+      {
+        id: 's-gen-1',
+        chinese: `今天我们学习‘${trimmed}’。`,
+        pinyin: `Jīntiān wǒmen xuéxí ‘${trimmed}’.`,
+        vietnamese: `Hôm nay chúng ta học ‘${trimmed}’.`,
+      },
+      {
+        id: 's-gen-2',
+        chinese: '中文很有意思。',
+        pinyin: 'Zhōngwén hěn yǒu yìsi.',
+        vietnamese: 'Tiếng Trung rất là thú vị.',
+      },
+      {
+        id: 's-gen-3',
+        chinese: '我们一起努力学。',
+        pinyin: 'Wǒmen yīqǐ nǔlì xué.',
+        vietnamese: 'Chúng mình cùng nhau cố gắng học nhé.',
+      },
+    ],
+    createdDate: new Date().toISOString(),
+  };
+}

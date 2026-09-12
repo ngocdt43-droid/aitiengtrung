@@ -39,6 +39,7 @@ export const InputSection: React.FC<InputSectionProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const SUGGESTED_WORDS = [
+    { label: 'Đi (去/走)', text: 'đi' },
     { label: 'Ăn (吃)', text: 'ăn' },
     { label: 'Học (学习)', text: 'học' },
     { label: 'Uống (喝)', text: 'uống' },

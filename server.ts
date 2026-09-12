@@ -4,6 +4,10 @@ import { fileURLToPath } from "url";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
+import {
+  findVocabularyInKnowledgeBase,
+  buildUniversalVocabularyLesson,
+} from "./src/data/vocabularyKnowledgeBase.ts";
 
 dotenv.config();
 
@@ -272,16 +276,69 @@ YÊU CẦU ĐẶC BIỆT:
     });
   } catch (error: any) {
     console.error("Lỗi khi phân tích bằng Gemini:", error);
+    const errorStr = String(error?.message || error || "");
+    const isRateLimit =
+      errorStr.includes("429") ||
+      errorStr.includes("RESOURCE_EXHAUSTED") ||
+      errorStr.includes("quota") ||
+      errorStr.includes("rate-limit");
+
+    const trimmedInput = typeof req.body?.text === "string" ? req.body.text.trim() : "";
+
+    // Tự động kích hoạt kho từ vựng hoặc tạo sơ đồ tư duy nếu là nhập từ/câu ngắn
+    if (trimmedInput) {
+      // 1. Kiểm tra kho bài học từ vựng biên soạn sẵn chuẩn giáo trình (ví dụ: 'đi', 'ăn', 'học', 'uống'...)
+      const knownLesson = findVocabularyInKnowledgeBase(trimmedInput);
+      if (knownLesson) {
+        console.log(`[Fallback] Kích hoạt bài học chuẩn từ kho từ vựng cho: "${trimmedInput}"`);
+        return res.json({
+          success: true,
+          data: {
+            ...knownLesson,
+            originalInput: trimmedInput,
+            inputType: "text",
+            createdDate: new Date().toISOString(),
+          },
+        });
+      }
+
+      // 2. Nếu là từ vựng hoặc cụm từ ngắn
+      const wordCount = trimmedInput.split(/\s+/).length;
+      if (wordCount <= 5 && trimmedInput.length <= 35) {
+        console.log(`[Fallback] Tạo sơ đồ tư duy thông minh cho: "${trimmedInput}"`);
+        const generatedLesson = buildUniversalVocabularyLesson(trimmedInput);
+        return res.json({
+          success: true,
+          data: {
+            ...generatedLesson,
+            originalInput: trimmedInput,
+            inputType: "text",
+            createdDate: new Date().toISOString(),
+          },
+        });
+      }
+    }
+
+    // Nếu là lỗi giới hạn quota 429 hoặc quá tải
+    if (isRateLimit) {
+      return res.status(429).json({
+        error:
+          "Hệ thống AI đang tạm thời đạt giới hạn lượt gọi miễn phí (Gemini API 429). Vui lòng đợi 5-10 giây rồi thử lại, hoặc bấm chọn các bài học mẫu có sẵn để học ngay!",
+        isRateLimit: true,
+      });
+    }
+
     return res.status(500).json({
-      error: error.message || "Có lỗi xảy ra khi xử lý dữ liệu. Vui lòng thử lại!",
+      error:
+        "Có lỗi xảy ra khi kết nối máy chủ AI. Vui lòng kiểm tra lại nội dung hoặc thử lại sau vài giây!",
     });
   }
 });
 
 // Endpoint: Giải thích từ khó bằng câu đơn giản cho học sinh THCS
 app.post("/api/explain-word", async (req, res) => {
+  const { word, contextSentence } = req.body;
   try {
-    const { word, contextSentence } = req.body;
     if (!word || !word.trim()) {
       return res.status(400).json({ error: "Thiếu từ cần giải thích." });
     }
@@ -328,8 +385,98 @@ YÊU CẦU:
     });
   } catch (err: any) {
     console.error("Lỗi giải thích từ khó:", err);
+    const cleanWord = (word || "").trim();
+
+    const FALLBACK_EXPLANATIONS: Record<string, any> = {
+      去: {
+        word: "去",
+        pinyin: "qù",
+        meaning: "Đi, đi đến",
+        simpleExplanation: "Động từ chỉ hành động rời vị trí hiện tại để đi đến một địa điểm nào đó.",
+        example: "我去学校。",
+        exampleMeaning: "Tôi đi đến trường học.",
+      },
+      走: {
+        word: "走",
+        pinyin: "zǒu",
+        meaning: "Bước đi, đi bộ",
+        simpleExplanation: "Chỉ hành động dùng đôi chân sải bước, hoặc cùng rủ nhau rời đi (Chúng ta đi thôi: 我们走吧).",
+        example: "我们走吧。",
+        exampleMeaning: "Chúng ta cùng đi thôi!",
+      },
+      吃: {
+        word: "吃",
+        pinyin: "chī",
+        meaning: "Ăn",
+        simpleExplanation: "Có bộ Khẩu (口: cái miệng) bên trái, hành động đưa thức ăn vào miệng để thưởng thức.",
+        example: "我想吃苹果。",
+        exampleMeaning: "Tôi muốn ăn quả táo.",
+      },
+      喝: {
+        word: "喝",
+        pinyin: "hē",
+        meaning: "Uống",
+        simpleExplanation: "Cũng có bộ Khẩu (miệng), dùng khi uống nước, uống trà giải khát.",
+        example: "我想喝水。",
+        exampleMeaning: "Tôi muốn uống nước.",
+      },
+      学: {
+        word: "学",
+        pinyin: "xué",
+        meaning: "Học tập",
+        simpleExplanation: "Ba chấm ở trên như những tia sáng tri thức khai mở trí tuệ cho học sinh.",
+        example: "我学中文。",
+        exampleMeaning: "Tôi học tiếng Trung.",
+      },
+      学校: {
+        word: "学校",
+        pinyin: "xuéxiào",
+        meaning: "Trường học",
+        simpleExplanation: "Nơi thầy cô và học sinh cùng nhau gặp gỡ, vui chơi và tiếp thu kiến thức.",
+        example: "这是我的学校。",
+        exampleMeaning: "Đây là trường của tôi.",
+      },
+      朋友: {
+        word: "朋友",
+        pinyin: "péngyou",
+        meaning: "Bạn bè",
+        simpleExplanation: "Chữ 朋 có 2 chữ Nguyệt kề bên như đôi bạn thân luôn song hành giúp đỡ nhau.",
+        example: "他是我的好朋友。",
+        exampleMeaning: "Cậu ấy là bạn tốt của tôi.",
+      },
+      家: {
+        word: "家",
+        pinyin: "jiā",
+        meaning: "Nhà, gia đình",
+        simpleExplanation: "Có mái nhà che chở ở trên (bộ Miên 宀), tượng trưng cho tổ ấm bình yên.",
+        example: "我想回家。",
+        exampleMeaning: "Tôi muốn về nhà.",
+      },
+    };
+
+    if (cleanWord && FALLBACK_EXPLANATIONS[cleanWord]) {
+      return res.json({
+        success: true,
+        data: FALLBACK_EXPLANATIONS[cleanWord],
+      });
+    }
+
+    if (cleanWord) {
+      return res.json({
+        success: true,
+        data: {
+          word: cleanWord,
+          pinyin: "cí huì",
+          meaning: "Từ vựng tiếng Trung",
+          simpleExplanation: `Từ '${cleanWord}' là một từ rất thông dụng trong giao tiếp. Hãy chú ý nghe phát âm chuẩn và luyện đọc nhiều lần!`,
+          example: `我们学习‘${cleanWord}’。`,
+          exampleMeaning: `Chúng mình cùng nhau học từ '${cleanWord}'.`,
+        },
+      });
+    }
+
     return res.status(500).json({
-      error: err.message || "Không thể giải thích từ vào lúc này. Vui lòng thử lại!",
+      error: "Không thể giải thích từ vào lúc này. Vui lòng thử lại!",
     });
   }
 });

@@ -172,7 +172,9 @@ export default function App() {
 
       const result: AnalysisResult = data.data;
       setAnalysis(result);
-      setSuccessMessage('Nhận diện và phân tích thành công!');
+      setSuccessMessage(
+        (data.data as any)?.sourceNotice || 'Tạo sơ đồ tư duy và bài học thành công!'
+      );
 
       // Add to history
       const newHistoryItem: LessonHistoryItem = {
@@ -193,9 +195,24 @@ export default function App() {
       }, 300);
     } catch (error: any) {
       console.error('Error analyzing content:', error);
-      setErrorMessage(
-        error.message || 'Đã có lỗi xảy ra. Hãy kiểm tra kết nối mạng hoặc thử một bức ảnh rõ nét hơn!'
-      );
+      let msg = error.message || 'Đã có lỗi xảy ra. Vui lòng thử lại!';
+      if (
+        msg.includes('429') ||
+        msg.includes('RESOURCE_EXHAUSTED') ||
+        msg.includes('quota') ||
+        msg.includes('rate-limit')
+      ) {
+        msg =
+          'Hệ thống AI đang nhận nhiều lượt yêu cầu cùng lúc (giới hạn 20 lượt gọi tạm thời của Gemini). Vui lòng đợi 5-10 giây rồi thử lại, hoặc chọn các bài học mẫu có sẵn để học ngay!';
+      } else if (msg.trim().startsWith('{') && msg.includes('"message"')) {
+        try {
+          const parsed = JSON.parse(msg);
+          msg = parsed.error?.message || parsed.message || msg;
+        } catch {
+          // ignore
+        }
+      }
+      setErrorMessage(msg);
     } finally {
       setIsLoading(false);
     }
